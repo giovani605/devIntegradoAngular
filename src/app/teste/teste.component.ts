@@ -8,6 +8,7 @@ import { LoggingService } from '../services/logging.service';
   providers: [LoggingService]
 })
 export class TesteComponent implements OnInit {
+  dados:any = "Nenhuma";
 
   constructor(private servicoLogging: LoggingService) { }
 
@@ -15,6 +16,7 @@ export class TesteComponent implements OnInit {
   }
   onInput() {
     this.servicoLogging.logToConsole("Estou funcionando");
+    console.log(this.dados);
   }
 
 }

@@ -8,11 +8,12 @@ export class LoggingService {
 
     }
 
-    logToConsole(msg: string) {
+    logToConsole(msg: string):any {
         this.cont++;
         console.log(msg + " " + this.cont);
         this.http.get("http://localhost:3000/teste").subscribe((dados) => {
             console.log(dados);
+            return dados;
         });
 
     }
