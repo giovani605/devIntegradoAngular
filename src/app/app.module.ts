@@ -7,10 +7,13 @@ import { TesteComponent } from './teste/teste.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NovaPaginaComponent } from './paginas/nova-pagina/nova-pagina.component';
 import { PaginaInicialComponent } from './paginas/pagina-inicial/pagina-inicial.component';
-
+import { LoginComponent } from './auth/login/login.component';
+import { PaginaLoginComponent } from './paginas/pagina-login/pagina-login.component';
+import { FormsModule }   from '@angular/forms';
 const appRoutes: Routes = [
   {path: 'novaPagina', component: NovaPaginaComponent },
-  {path: '', component: PaginaInicialComponent }
+  {path: 'home', component: PaginaInicialComponent },
+  {path: '', component: PaginaLoginComponent }
 ];
 
 @NgModule({
@@ -18,12 +21,15 @@ const appRoutes: Routes = [
     AppComponent,
     TesteComponent,
     PaginaInicialComponent,
-    NovaPaginaComponent
+    NovaPaginaComponent,
+    LoginComponent,
+    PaginaLoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
