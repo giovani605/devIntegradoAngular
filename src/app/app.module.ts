@@ -10,6 +10,7 @@ import { PaginaInicialComponent } from './paginas/pagina-inicial/pagina-inicial.
 import { LoginComponent } from './auth/login/login.component';
 import { PaginaLoginComponent } from './paginas/pagina-login/pagina-login.component';
 import { FormsModule }   from '@angular/forms';
+import { CartaoListaComponent } from './cartoes/cartao-lista/cartao-lista.component';
 const appRoutes: Routes = [
   {path: 'novaPagina', component: NovaPaginaComponent },
   {path: 'home', component: PaginaInicialComponent },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     PaginaInicialComponent,
     NovaPaginaComponent,
     LoginComponent,
-    PaginaLoginComponent
+    PaginaLoginComponent,
+    CartaoListaComponent
   ],
   imports: [
     BrowserModule,
