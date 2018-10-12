@@ -4,10 +4,12 @@
   <form (ngSubmit)="onSubmit()" #loginForm="ngForm" >
     <label for="user">User</label>
     <input type="text" id="user" required [(ngModel)]="authData.user" name="user">
-    <br>
+    <br />
+    <br />
     <label for="senha">Senha</label>
     <input type="password" id="senha" required [(ngModel)]="authData.senha" name="senha">
-    <br>
-    <button type="submit">Submit</button>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary" >Logar</button>
   </form>
 </div>
