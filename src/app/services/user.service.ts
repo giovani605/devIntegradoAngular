@@ -1,18 +1,18 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Subject } from "rxjs";
 
 
 @Injectable({ providedIn: "root" })
-export class UserService{
-    public usuario:any;
+export class UserService {
+    public usuario:any = 1;
     public token:any;
     private cartoes:any[];
     private cartoesUpdated = new Subject<any[]>();
     
     constructor(private http: HttpClient){
-
     }
+    
     recuperarCartoes(){
         this.http.get("http://localhost:3001/cartoes/user/" + this.usuario["idConta"]).subscribe(response => {
             console.log(response);

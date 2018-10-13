@@ -11,6 +11,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { PaginaLoginComponent } from './paginas/pagina-login/pagina-login.component';
 import { FormsModule }   from '@angular/forms';
 import { CartaoListaComponent } from './cartoes/cartao-lista/cartao-lista.component';
+import { PaginaCartaoComponent } from './paginas/pagina-cartao/pagina-cartao.component';
 const appRoutes: Routes = [
   {path: 'novaPagina', component: NovaPaginaComponent },
   {path: 'home', component: PaginaInicialComponent },
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     NovaPaginaComponent,
     LoginComponent,
     PaginaLoginComponent,
-    CartaoListaComponent
+    CartaoListaComponent,
+    PaginaCartaoComponent
   ],
   imports: [
     BrowserModule,
