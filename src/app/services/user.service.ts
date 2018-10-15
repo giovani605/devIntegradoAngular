@@ -5,26 +5,26 @@ import { Subject } from "rxjs";
 
 @Injectable({ providedIn: "root" })
 export class UserService {
-    public usuario:any = 1;
-    public token:any;
-    private cartoes:any[];
+    public usuario: any;
+    public token: any;
+    private cartoes: any[];
     private cartoesUpdated = new Subject<any[]>();
-    
-    constructor(private http: HttpClient){
+
+    constructor(private http: HttpClient) {
     }
-    
-    recuperarCartoes(){
+
+    recuperarCartoes() {
         this.http.get("http://localhost:3001/cartoes/user/" + this.usuario["idConta"]).subscribe(response => {
             console.log(response);
             this.cartoes = response["dados"];
             this.cartoesUpdated.next([...this.cartoes]);
         });
     }
-    getCartoesUpdatedListener(){
+    getCartoesUpdatedListener() {
         return this.cartoesUpdated.asObservable();
     }
 
-    getCartoes(){
+    getCartoes() {
         // copiando o array [...array]
         return [...this.cartoes];
     }
