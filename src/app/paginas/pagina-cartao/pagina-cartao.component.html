@@ -1,8 +1,12 @@
-<div class="panel panel-default">
-  <div class="panel-body">
-    <p>Id :{{cartao.id}}</p>
-    <p>Saldo: {{cartao.saldo}}</p>
-    <p>Descrição: {{cartao.desc}}</p>
-    <button (click)="onAtualizarSaldo()">Atualizar Saldo</button>
+<div class="panel panel-default  border border-dark rounded ml-1">
+  <div class="panel-body mt-1 row">
+    <div class="col-3">
+      <p>Id :{{cartao.id}}</p>
+      <p>Saldo: {{cartao.saldo}}</p>
+      <p>Descrição: {{cartao.desc}}</p>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-primary my-5" (click)="onAtualizarSaldo()">Atualizar Saldo</button>
+    </div>
   </div>
 </div>

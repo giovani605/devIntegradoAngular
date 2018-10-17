@@ -1,9 +1,8 @@
-<p>Lista Cartões</p>
-<div>
-  <li *ngFor="let c of listaCartoes">
-    <p>{{ c.id }}</p>
-    <app-pagina-cartao [cartao]="c"></app-pagina-cartao>
-  </li>
+<div class="">
+  <div>
+    <li *ngFor="let c of listaCartoes">
+      <app-pagina-cartao [cartao]="c"></app-pagina-cartao>
+    </li>
+  </div>
 </div>
-
 <br />
