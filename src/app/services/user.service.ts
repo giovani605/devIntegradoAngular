@@ -28,5 +28,14 @@ export class UserService {
         // copiando o array [...array]
         return [...this.cartoes];
     }
+    atualizarSaldoCartao(idCartao: any) {
+        console.log("Atualizando saldo cartao" + idCartao);
+        this.http.post("http://localhost:3001/cartoes/atualizar/" + idCartao,{}).subscribe(response => {
+            console.log(response);
+            this.recuperarCartoes();
+
+        });
+
+    }
 
 }
