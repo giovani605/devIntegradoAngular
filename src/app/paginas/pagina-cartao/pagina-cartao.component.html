@@ -1,12 +1,18 @@
-<div class="panel panel-default  border border-dark rounded ml-1">
+<div class="panel panel-default  border border-dark rounded ml-1 container">
   <div class="panel-body mt-1 row">
-    <div class="col-3">
+    <div class="col-sm-3">
       <p>Id :{{cartao.id}}</p>
       <p>Saldo: {{cartao.saldo}}</p>
       <p>Descrição: {{cartao.desc}}</p>
     </div>
-    <div class="col-6">
+    <div class="col-sm-3">
       <button class="btn btn-primary my-5" (click)="onAtualizarSaldo()">Atualizar Saldo</button>
+    </div>
+    <div class="col-sm-3">
+      <p>Calcular Saldo em periodo</p>
+      <input type="date" [(ngModel)]="dataPeriodo" />
+      <button class="btn btn-primary my-5" (click)="onCalcularPeriodo()">Calcular periodo</button>
+      <p>Valor previsto: {{valorPrevisto}}</p>
     </div>
   </div>
 </div>

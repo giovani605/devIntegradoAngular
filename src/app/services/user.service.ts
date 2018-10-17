@@ -28,14 +28,25 @@ export class UserService {
         // copiando o array [...array]
         return [...this.cartoes];
     }
-    atualizarSaldoCartao(idCartao: any) {
+    atualizarSaldoCartao(idCartao: any):any {
         console.log("Atualizando saldo cartao" + idCartao);
-        this.http.post("http://localhost:3001/cartoes/atualizar/" + idCartao,{}).subscribe(response => {
+        this.http.post("http://localhost:3001/cartoes/atualizar/" + idCartao, {}).subscribe(response => {
             console.log(response);
             this.recuperarCartoes();
 
         });
 
+    }
+    calcularSaldoPeriodo(idCartao: any, dataFinal: Date) {
+        var promessa = new Subject<any>();
+        console.log("Atualizando saldo cartao" + idCartao);
+        this.http.post("http://localhost:3001/cartoes/periodo/" + idCartao,
+            { "dataFinal": dataFinal }).subscribe(response => {
+                console.log("recebi a resposta : " + JSON.stringify(response));
+                promessa.next(response);
+
+            });
+        return promessa;
     }
 
 }
