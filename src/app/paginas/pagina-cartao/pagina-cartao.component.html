@@ -10,7 +10,10 @@
     </div>
     <div class="col-sm-3">
       <p>Calcular Saldo em periodo</p>
-      <input type="date" [(ngModel)]="dataPeriodo" />
+      <p>Inicio</p>
+      <input type="date" [(ngModel)]="dataInicial" />
+      <p>Fim</p>
+      <input type="date" [(ngModel)]="dataFim" />
       <button class="btn btn-primary my-5" (click)="onCalcularPeriodo()">Calcular periodo</button>
       <p>Valor previsto: {{valorPrevisto}}</p>
     </div>

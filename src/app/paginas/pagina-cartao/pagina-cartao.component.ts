@@ -11,7 +11,8 @@ export class PaginaCartaoComponent implements OnInit {
 
   @Input() cartao: Cartao;
 
-  public dataPeriodo:Date = new Date();
+  public dataInicial:Date = new Date();
+  public dataFim:Date = new Date();
   public promessa:Subject<any>;
   public valorPrevisto:any = "";
 
@@ -26,8 +27,9 @@ export class PaginaCartaoComponent implements OnInit {
     this.userService.atualizarSaldoCartao(this.cartao.id);
   }
   onCalcularPeriodo(){
-    console.log("data:" + this.dataPeriodo);
-    this.promessa = this.userService.calcularSaldoPeriodo(this.cartao.id,this.dataPeriodo);
+    console.log("data:" + this.dataFim);
+    console.log("data Inicial:" + this.dataInicial);
+    this.promessa = this.userService.calcularSaldoPeriodo(this.cartao.id,this.dataFim,this.dataInicial);
     this.promessa.asObservable().subscribe((resultado) =>{
       console.log("cheguei no componente" + JSON.stringify(resultado));
       this.valorPrevisto = resultado["total"];
