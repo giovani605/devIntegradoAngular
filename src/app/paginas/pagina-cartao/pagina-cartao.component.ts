@@ -14,8 +14,8 @@ export class PaginaCartaoComponent implements OnInit {
   public dataInicial:Date = new Date();
   public dataFim:Date = new Date();
   public promessa:Subject<any>;
-  public valorPrevisto:any = "";
-
+  public valorPrevistoInicio:any = "";
+  public valorPrevistoFim:any = "";
 
   constructor(private userService: UserService) { }
 
@@ -32,7 +32,8 @@ export class PaginaCartaoComponent implements OnInit {
     this.promessa = this.userService.calcularSaldoPeriodo(this.cartao.id,this.dataFim,this.dataInicial);
     this.promessa.asObservable().subscribe((resultado) =>{
       console.log("cheguei no componente" + JSON.stringify(resultado));
-      this.valorPrevisto = resultado["total"];
+      this.valorPrevistoInicio = resultado["saldoInicio"];
+      this.valorPrevistoFim = resultado["saldoFim"];
       this.promessa.unsubscribe();
     });
   }

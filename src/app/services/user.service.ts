@@ -43,7 +43,9 @@ export class UserService {
         this.http.post("http://localhost:3001/cartoes/periodo/" + idCartao,
             { "dataFinal": dataFinal, "dataInicial": dataInicial }).subscribe(response => {
                 console.log("recebi a resposta : " + JSON.stringify(response));
-                promessa.next(response);
+                var resposta = {"saldoInicio" : response["inicio"]["saldo"],
+                "saldoFim" : response["fim"]["saldo"] }
+                promessa.next(resposta);
 
             });
         return promessa;
