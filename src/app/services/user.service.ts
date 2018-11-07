@@ -39,7 +39,7 @@ export class UserService {
     }
     calcularSaldoPeriodo(idCartao: any, dataFinal: Date, dataInicial: Date) {
         var promessa = new Subject<any>();
-        console.log("Atualizando saldo cartao" + idCartao);
+        console.log("Calculando periodo cartao" + idCartao + " dataFinal" + dataFinal + " dataInicial "+ dataInicial);
         this.http.post("http://localhost:3001/cartoes/periodo/" + idCartao,
             { "dataFinal": dataFinal, "dataInicial": dataInicial }).subscribe(response => {
                 console.log("recebi a resposta : " + JSON.stringify(response));
